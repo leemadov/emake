@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>emake</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .header {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .project {
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .project img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .project-description {
+            display: none;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>emake</h1>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Search in Projects...">
+    </div>
+    <ul id="projects">
+        <li>
+            <div class="project">
+                <a href="basket.html">
+                    <img src="basket.JPG" alt="Basketball">
+                </a>
+                <div class="project-description">This project runs its code and then watches a video of a basketball shot. In the code, there's a line that identifies the ball, so it creates a path and checks if the path goes into the basket, then it writes on the side if it's a win or not.</div>
+            </div>
+        </li>
+        <li>
+            <div class="project">
+                <a href="cool_paints.html">
+                    <img src="cool paints.JPG" alt="Cool Paints">
+                </a>
+                <div class="project-description">This project is built with an engine that contains various paintings. The code runs it, and then it draws them.</div>
+            </div>
+        </li>
+        <!-- Add links to more projects like this -->
+    </ul>
+    <script>
+        const searchInput = document.getElementById('search');
+        const projectsList = document.getElementById('projects').getElementsByTagName('li');
+
+        searchInput.addEventListener('input', () => {
+            const searchQuery = searchInput.value.toLowerCase();
+            let hasResults = false;
+            for (let i = 0; i < projectsList.length; i++) {
+                const projectTitle = projectsList[i].innerText.toLowerCase();
+                if (projectTitle.includes(searchQuery)) {
+                    projectsList[i].style.display = 'block';
+                    hasResults = true;
+                } else {
+                    projectsList[i].style.display = 'none';
+                }
+            }
+
+            if (!hasResults) {
+                alert('No results found.');
+            }
+        });
+
+        const projectLinks = document.querySelectorAll('.project a');
+        projectLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.location.href = link.href;
+            });
+        });
+    </script>
+</body>
+</html>
