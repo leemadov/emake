@@ -1,79 +1,87 @@
-<div class="form">
-      <title>emake sign up/ log in</title>
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
+<div class="flex min-h-screen mx-auto justify-center items-center bg-gray-50 py-12 px-4">
+<!--   registration form -->
+   <div class="registration-form max-w-md w-full space-y-8">
+     <div>
+       <h2 class="text-center text-3xl sm:text-3xl md:text-4xl font-bold text-gray-800">Create your account</h2>
+       <p class="mt-1 text-center text-gray-500">Already Registered? <a id="login-link" href="#" class="text-green-500 hover:underline">Sign in</a></p>
+     </div>
+    
+    <form class="bg-white py-8 px-6 shadow rounded-lg mb-0 space-y-5">
       
-      <div class="tab-content">
-        <div id="signup">   
-          <h1>Sign Up for Free</h1>
-          
-          <form action="/" method="post">
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Started</button>
-          
-          </form>
-
-        </div>
-        
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
-        </div>
-        
-      </div><!-- tab-content -->
+      <div class="space-y-5 md:flex md:space-x-2 md:space-y-0">
+        <div>
+      <label for="first-name" class="block text-sm font-medium text-gray-700">First Name</label>
+      <div class="mt-1">
+        <input type="text" name="first-name" id="first-name" class="appearance-none px-3 py-2 w-full border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+      </div>
+    </div>
       
-</div> <!-- /form -->
+      <div>
+      <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name</label>
+      <div class="mt-1">
+        <input type="text" name="last-name" id="last-name" class="appearance-none px-3 py-2 w-full border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+      </div>
+    </div>
+      </div>
+      
+      
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+      <div class="mt-1">
+        <input type="text" name="email" id="email" class="appearance-none px-3 py-2 w-full border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+      </div>
+    </div>
+      
+      <div>
+      <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile No.</label>
+      <div class="mt-1">
+        <input type="tel" name="mobile" id="mobile" pattern="^\d{10}$" class="appearance-none px-3 py-2 w-full border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+      </div>
+    </div>
+      
+      <div>
+      <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+      <div class="mt-1">
+        <input type="password" name="password" id="password" class="appearance-none px-3 py-2 w-full border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+      </div>
+    </div>
+      
+      <div class="flex text-sm items-center space-x-1">
+        <input id="termsAndPrivacy" name="termsAndPrivacy" type="checkbox" class="border border-gray-500 h-4 w-4 text-green-600 rounded focus:ring-1 focus:ring-green-500">
+        <label for="termsAndPrivacy" class="text-gray-700">I agree to the <a href="#" class="text-green-500 hover:text-green-700">Terms</a> and <a href="#" class="text-green-500 hover:text-green-700">Privacy Policy</a></label>
+      </div>
+      
+    <button type="submit" class="w-full px-4 py-2 text-center bg-green-500 rounded border border-transparent shadow-sm text-white font-medium hover:bg-green-600 focus:outline-none focus:ring-1 focus:ring-green-400" >Sign Up</button>
+    
+  </form>
+   </div>
+  
+<!--   Login form -->
+  <div class="login-form hidden max-w-md w-full space-y-8">
+     <div>
+       <h2 class="text-center text-3xl sm:text-3xl md:text-4xl font-bold text-gray-800">Log in to your account</h2>
+       <p class="mt-1 text-center text-gray-500">Not Registered? <a id="register-link" href="#" class="text-green-500 hover:underline">Sign up</a></p>
+     </div>
+    
+    <form class="bg-white py-8 px-6 shadow rounded-lg mb-0 space-y-5">
+      
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+      <div class="mt-1">
+        <input type="text" name="email" id="email" class="appearance-none px-3 py-2 w-full border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+      </div>
+    </div>
+         
+      <div>
+      <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+      <div class="mt-1">
+        <input type="password" name="password" id="password" class="appearance-none px-3 py-2 w-full border border-gray-300 rounded shadow-sm focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+      </div>
+    </div>
+      
+    <button type="submit" class="w-full px-4 py-2 text-center bg-green-500 rounded border border-transparent shadow-sm text-white font-medium hover:bg-green-600 focus:outline-none focus:ring-1 focus:ring-green-400" >Sign Up</button>  
+    
+  </form>
+   </div>
+
+</div>
