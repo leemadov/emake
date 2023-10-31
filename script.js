@@ -1,43 +1,18 @@
-$('.form').find('input, textarea').on('keyup blur focus', function (e) {
-  
-  var $this = $(this),
-      label = $this.prev('label');
+const registerLink = document.querySelector('#register-link'); //sign up link
+const loginLink = document.querySelector('#login-link'); // sign in link
+const registrationForm = document.querySelector('.registration-form');
+const loginForm = document.querySelector('.login-form');
 
-	  if (e.type === 'keyup') {
-			if ($this.val() === '') {
-          label.removeClass('active highlight');
-        } else {
-          label.addClass('active highlight');
-        }
-    } else if (e.type === 'blur') {
-    	if( $this.val() === '' ) {
-    		label.removeClass('active highlight'); 
-			} else {
-		    label.removeClass('highlight');   
-			}   
-    } else if (e.type === 'focus') {
-      
-      if( $this.val() === '' ) {
-    		label.removeClass('highlight'); 
-			} 
-      else if( $this.val() !== '' ) {
-		    label.addClass('highlight');
-			}
-    }
+// event listeners
 
+//sign up link clicked
+registerLink.addEventListener('click', ()=>{
+  registrationForm.classList.remove('hidden');
+  loginForm.classList.add('hidden');
 });
 
-$('.tab a').on('click', function (e) {
-  
-  e.preventDefault();
-  
-  $(this).parent().addClass('active');
-  $(this).parent().siblings().removeClass('active');
-  
-  target = $(this).attr('href');
-
-  $('.tab-content > div').not(target).hide();
-  
-  $(target).fadeIn(600);
-  
+//sign in link clicked
+loginLink.addEventListener('click', ()=>{
+  loginForm.classList.remove('hidden');
+  registrationForm.classList.add('hidden');
 });
