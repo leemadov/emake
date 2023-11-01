@@ -1,55 +1,76 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Sign up and Login in</title>
-	<link rel="icon" href="logo.JPG" type="image/png">
-	<link rel="stylesheet" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$(".login-form").hide();
-			$(".login").css("background","none");
-
-			$(".login").click(function(){
-				$(".signup-form").hide();
-				$(".login-form").show();
-				$(".signup").css("background","none")
-				$(".login").css("background","#fff");
-			});
-
-			$(".signup").click(function(){
-				$(".login-form").hide();
-				$(".signup-form").show();
-				$(".signup").css("background","#fff")
-				$(".login").css("background","none");
-			});
-
-			$(".btn").click(function(){
-				$(".input").val("");
-			});
-		});
-	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up/log in</title>
+    <link rel="stylesheet" href="sign-in.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-	<div class="container">
-		<div class="signup">Sign up</div>
-		<div class="login">log in</div>
-
-
-		<div class="signup-form">
-			<input type="text" placeholder="Email" class="input"><br>
-			<input type="text" placeholder="Username" class="input"><br>
-			<input type="password" placeholder="Password" class="input"><br>
-			<a href="index.html">create Account</a>
-		</div>
-
-		<div class="login-form">
-			<input type="text" placeholder="Email or Username" class="input"><br>
-			<input type="text" placeholder="Password" class="input"><br>
-			<a href="index.html">log in</a>
-			</span>
-		</div>
-	</div>
+    <div class="container">
+        <div class="Form login-form">
+            <link rel="icon" href="logo.JPG" type="image/png">
+        <h2>Login</h2>
+        <form action="#">
+            <div class="input-box">
+                <i class='bx bxs-user'></i>
+                <label for="#">Username</label>
+                <input type="text" placeholder="Enter Your Username*">
+               
+               
+            </div>
+            <div class="input-box">
+                <i class='bx bxs-envelope' ></i>
+                <input type="text" placeholder="Enter Your Password*">
+                <label for="#">Password</label>
+              
+            </div>
+            <div class="forgot-section">
+            </div>
+            <a class="btn" href="index.html">Login</a>
+        <p class="RegisteBtn RegiBtn"><a href="#">Register Now</a></p>
+    </div>
+    <div class="Form Register-form">
+        <h2>Register</h2>
+        <form action="#">
+            <div class="input-box">
+                <i class='bx bxs-user'></i>
+                <label for="#">Username</label>
+                <input type="text" placeholder="Enter Your Username*">
+               
+               
+            </div>
+            <div class="input-box">
+                <i class='bx bxs-envelope' ></i>
+                <input type="text" placeholder="Enter Your Password*">
+                <label for="#">Password</label>
+            </div>
+            <div class="input-box">
+                <i class='bx bxs-envelope' ></i>
+                <input type="text" placeholder="Enter Your Password*">
+                <label for="#">Confirm Password</label>
+            </div>
+            <div class="forgot-section">
+            </div>
+            <a class="btn" href="index.html">Login</a>
+        <p class="LoginBtn"><a href="#">Login Now</a></p>
+    </div>
+</div>
+<script>
+    const container=document.querySelector(".container") ;
+    const loginForm=document.querySelector('.login-form')
+    const RegisterForm=document.querySelector('.Register-form');
+    const RegiBtn=document.querySelector('.RegiBtn');
+    const LoginBtn=document.querySelector('.LoginBtn');
+    RegiBtn.addEventListener('click',()=>{
+        RegisterForm.classList.add('active');
+        loginForm.classList.add('active')
+    })
+    LoginBtn.addEventListener('click',()=>{
+        RegisterForm.classList.remove('active');
+        loginForm.classList.remove('active')
+    })
+</script>
 </body>
 </html>
